@@ -162,4 +162,36 @@ func Test10818() {
 	// }
 }
 
+var reader *bufio.Reader = bufio.NewReader(os.Stdin)
+var writer *bufio.Writer = bufio.NewWriter(os.Stdout)
+
+func Test2577() {
+
+	defer writer.Flush()
+
+	var a int
+	var b int
+	var c int
+
+	fmt.Fscanln(reader, &a)
+	fmt.Fscanln(reader, &b)
+	fmt.Fscanln(reader, &c)
+
+	multiple := a * b * c
+
+	n := strconv.Itoa(multiple)
+
+	slice := strings.Split(n, "")
+
+	for i:=0; i< 10; i++ {
+		var numCnt int
+		for j:=0; j< len(slice); j++{
+			if slice[j] == strconv.Itoa(i) {
+				numCnt += 1
+			}
+		}
+		fmt.Println(numCnt)
+	}
+}
+
 
