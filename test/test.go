@@ -195,3 +195,38 @@ func Test2577() {
 }
 
 
+func Test3052() {
+
+	defer writer.Flush()
+
+	var a int
+	var nList []int
+	var remainList []int
+
+	for true{
+		num, _ := fmt.Fscanln(reader, &a)
+		if num != 1 {
+			break
+		} else {
+			nList = append(nList, a)
+		}
+	}
+
+	for i:=0; i< len(nList); i++ {
+		remainList = append(remainList, nList[i]%42)
+	}
+
+
+keys := make(map[int]bool)
+var result [] int
+
+for _, value := range remainList{
+	if _, saveValue := keys[value]; !saveValue{ 
+		keys[value] = true
+		result = append(result,value)
+	}
+} 
+
+	fmt.Fprintln(writer, len(result))
+}
+
