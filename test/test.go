@@ -230,3 +230,45 @@ for _, value := range remainList{
 	fmt.Fprintln(writer, len(result))
 }
 
+
+func Test1546() {
+	br := bufio.NewReader(os.Stdin)
+	str, _ := br.ReadString(('\n'))
+	str2, _ := br.ReadString(('\n'))
+
+	n := strings.TrimSpace(str)
+	scores := strings.TrimSpace(str2)
+
+	blank := strings.Fields(scores)
+
+	nums, _ := strconv.Atoi(n)
+
+	var floatList[] float64
+
+	for i:=0; i<nums;i++ {
+		floats, _ := strconv.ParseFloat(blank[i], 64)
+		floatList = append(floatList, floats)
+	}
+	for i := 0; i < nums; i++ {
+		for j := 0; j < i; j++ {
+			if floatList[i] < floatList[j] {
+				floatList[j], floatList[i] = floatList[i], floatList[j]
+			}
+		}
+	}
+
+	max := floatList[nums-1]
+	var newFloats [] float64
+	var result float64
+	var mean float64
+
+	for i:=0; i<nums;i++{
+		newFloat := (floatList[i] / max) * 100
+		newFloats = append(newFloats, newFloat)
+		result = result + newFloats[i]
+		floatNums, _ := strconv.ParseFloat(n, 64)
+		mean = result / floatNums
+	}
+	fmt.Printf("%f", mean)	
+}
+
