@@ -1,4 +1,4 @@
-package main
+package test8958
 
 import (
 	"bufio"
@@ -20,7 +20,7 @@ func oxox(temp string) int {
 	return sum
 }
 
-func main() {
+func Test8958_1() {
 	reader := bufio.NewReader(os.Stdin)
 	writer := bufio.NewWriter(os.Stdout)
 	defer writer.Flush()
