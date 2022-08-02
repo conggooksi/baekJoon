@@ -8,21 +8,24 @@ func main() {
 	}
 
 
-	var a[] int
-	var b[] int
-	for i := 1; i <= 10; i++ {
-		a = append(a, i)
-	}
+	var a = []int64{1,2,3,4,5}
+	var b []int64
 
-	for i := 0; i <= 10; i++ {
-		for j := 1; j <= 10; j++ {
-			if i == d(j) {
-				b = append(a[:i], a[i+1:]...)
-			}
-		}
+	b = append(a[:2], a[2+1:]...),
 
-	}
-	fmt.Println(b)
+	// for i := 1; i <= 10; i++ {
+	// 	a = append(a, i)
+	// }
+
+	// for i := 0; i <= len(a); i++ {
+	// 	for j := 1; j <= 10; j++ {
+	// 		if i == d(j) {
+	// 			b = append(a[:i], a[i+1:]...)
+	// 		}
+	// 	}
+
+	// }
+	fmt.Printf("%v\n", b)
 
 }
 
