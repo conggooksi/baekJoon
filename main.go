@@ -17,15 +17,11 @@ func main() {
 	text1 := "어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다."
 
 	fmt.Println(text1)
-	paragraph2(n)
+	for i :=0; i < n; i++ {
+		paragraph2(n)
+	}
 
-	// for i := 0; i < n; i++ {
-	// 	for j := n; j > 0; j-- {
-	// 		fmt.Print("____")
-	// 	}
-	// 	fmt.Println("\n")
-
-	// }
+	
 }
 
 func paragraph1(n int) (result string) {
