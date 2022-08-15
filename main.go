@@ -82,6 +82,10 @@ func paragraph2(n int) (result string) {
 	for i := n; i < n; i++ {
 		fmt.Print(prefix)
 	}
+	for i := 1; i < n; i++ {
+		fmt.Print(prefix)
+	}
+	fmt.Println(text5)
 	fmt.Println(text5)
 
 	return result
