@@ -1,4 +1,4 @@
-package main
+package test1427
 
 import (
 	"bufio"
@@ -11,7 +11,7 @@ import (
 var reader *bufio.Reader = bufio.NewReader(os.Stdin)
 var writer *bufio.Writer = bufio.NewWriter(os.Stdout)
 
-func main() {
+func test1427() {
 	defer writer.Flush()
 	var n, result string
 
